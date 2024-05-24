@@ -1,0 +1,161 @@
+<!-- 
+Requirements
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>FINAL PROJECT</title>
+  <style>
+    @font-face {
+      font-family: font;
+      src: url(font.otf);
+    }
+
+    #fancyFont {
+
+      font-family: font;
+    }
+
+    body {
+      background-color: aliceblue;
+    }
+
+    .slide {
+      border: 12px solid black;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 500px;
+      background-color: white;
+    }
+
+    .slide-text {
+      background-color: rgba(240, 248, 255, 0.8);
+      width: 80%;
+      text-align: center;
+      border-radius: 20px;
+      font-family: "Poetsen One", sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      width: 100%;
+    }
+
+    button:hover {
+      background: linear-gradient(#408c99, #599bb3);
+    }
+
+    button {
+      width: 140px;
+      height: 50px;
+      border-width: 1px;
+      color: #fff;
+      border-color: #599bb3;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0px 10px 14px -7px #276873;
+      text-shadow: 0px 1px 0px #3d768a;
+      background: linear-gradient(#599bb3, #408c99);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="fancyFont">He was Truman </h1>
+
+  <br>
+  <div class="slide">
+    <img id="p" src="Tman/T (1).jpg" height="1" alt="TMan">
+    <div class="slide-text">
+      <h3>He was definitely not gay</h3>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button id="b" type="button"> ↝ Next ↝ </button>
+
+  </div>
+
+
+  <audio id="mp">
+    <source src="MusicP.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+
+
+
+
+    var $pic = $("#b");
+    $pic.hide();
+    $pic.fadeIn(2000);
+    $("#p").animate({
+      height: "400px",
+    }, 1500);
+
+
+    var one = 0;
+    var numClick = 0;
+    $("button").on("click", function () {
+      if(one==0){
+        $('audio#mp')[0].play()
+        one++;
+      }
+      numClick++;
+      if (numClick == 1) {
+        $("#p").attr("src", "Tman/T (2).jpg").css("height", "400px");
+
+        $("h3").text("I mean not gay at all");
+      }
+
+      else if (numClick == 2) {
+        $("#p").attr("src", "Tman/T (3).jpg").css("height", "400px");
+        $("h3").text("He posed with choclate");
+      }
+
+      else if (numClick == 3) {
+        $("#p").attr("src", "Tman/T (4).jpg").css("height", "400px");
+        $("h3").text("He never told me no");
+      }
+      else if (numClick == 4) {
+        $("#p").attr("src", "Tman/T (5).jpg").css("height", "400px");
+        $("h3").text("He was The Gomez Addams");
+      }
+      else if (numClick == 5) {
+        $("#p").attr("src", "Tman/T (6).jpg").css("height", "400px");
+        $("h3").text("He wore a hat once or twice, idk :^)");
+      }
+      else if (numClick == 6) {
+        $("#p").attr("src", "Tman/T (7).jpg").css("height", "400px");
+        $("h3").text("He was Mercutio (and paris)");
+      }
+      else if (numClick == 7) {
+        $("#p").attr("src", "Tman/T (8).jpg").css("height", "400px");
+        $("h3").text("He was TRUMAN");
+      }
+      else {
+        $("#p").attr("src", "Tman/T (1).jpg").css("height", "400px");
+        $("h3").text("He was definitely not gay");
+        numClick = 0;
+      }
+    })
+
+
+  </script>
+
+</body>
+
+</html>
